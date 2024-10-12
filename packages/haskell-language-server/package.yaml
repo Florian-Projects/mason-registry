@@ -11,7 +11,7 @@ categories:
 
 source:
   # renovate:datasource=github-releases
-  id: pkg:generic/haskell/haskell-language-server@2.8.0.0
+  id: pkg:generic/haskell/haskell-language-server@2.9.0.1
   build:
     - target: unix
       run: ghcup install hls "$VERSION" -i "$PWD"
@@ -24,6 +24,7 @@ source:
         server_9_4_8: bin/haskell-language-server-9.4.8
         server_9_6_5: bin/haskell-language-server-9.6.5
         server_9_8_2: bin/haskell-language-server-9.8.2
+        server_9_10_1: bin/haskell-language-server-9.10.1
 
     - target: win
       run: ghcup install hls $env:VERSION -i ($pwd).path
@@ -36,6 +37,7 @@ source:
         server_9_4_8: haskell-language-server-9.4.8.exe
         server_9_6_5: haskell-language-server-9.6.5.exe
         server_9_8_2: haskell-language-server-9.8.2.exe
+        server_9_10_1: haskell-language-server-9.10.1.exe
 
 bin:
   haskell-language-server-wrapper: "{{source.build.bin.wrapper}}"
@@ -44,3 +46,4 @@ bin:
   haskell-language-server-9.4.8: "{{source.build.bin.server_9_4_8}}"
   haskell-language-server-9.6.5: "{{source.build.bin.server_9_6_5}}"
   haskell-language-server-9.8.2: "{{source.build.bin.server_9_8_2}}"
+  haskell-language-server-9.8.2: "{{source.build.bin.server_9_10_1}}"
